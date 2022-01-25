@@ -1,15 +1,13 @@
 package lgwarlick.cards.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class CardController {
+public class IndexController {
 
-    @RequestMapping("/card")
-    public String card(){
-        return "card";
+    @RequestMapping({"", "/", "index", "index.html"})
+    public String index(){
+        return "index";
     }
-
 }
