@@ -1,15 +1,14 @@
 package lgwarlick.cards.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class CardController {
+public class CardReleaseSetController {
 
-    @RequestMapping("/card")
-    public String card(){
-        return "card";
+    @RequestMapping("/set")
+    public String allCardsInReleaseSet(){
+        return "cardreleaseset";
     }
 
 }
