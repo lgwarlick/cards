@@ -6,7 +6,7 @@ import lgwarlick.cards.service.CrudService;
 
 import java.util.Set;
 
-public class CardReleaseSetServiceMap extends AbstractMapService<CardReleaseSet, Long> implements CrudService<CardReleaseSet, Long> {
+public class CardReleaseSetServiceMap extends AbstractMapService<CardReleaseSet, Long> implements CardReleaseSetService {
 
 
     @Override
