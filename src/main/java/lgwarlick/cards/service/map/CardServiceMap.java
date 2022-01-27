@@ -2,11 +2,13 @@ package lgwarlick.cards.service.map;
 
 import lgwarlick.cards.model.Card;
 
+import lgwarlick.cards.model.CardType;
+import lgwarlick.cards.service.CardService;
 import lgwarlick.cards.service.CrudService;
 
 import java.util.Set;
 
-public class CardServiceMap extends AbstractMapService<Card, Long> implements CrudService<Card, Long> {
+public class CardServiceMap extends AbstractMapService<Card, Long> implements CardService {
 
     @Override
     public Set<Card> findAll() {
@@ -31,5 +33,15 @@ public class CardServiceMap extends AbstractMapService<Card, Long> implements Cr
     @Override
     public void delete(Card object) {
         super.delete(object);
+    }
+
+    /**
+     *
+     * @param cardType
+     * @return all cards that meet cardType (e.g. Agenda)
+     */
+    @Override
+    public Set<Card> findAllByType(CardType cardType) {
+        return null;
     }
 }
