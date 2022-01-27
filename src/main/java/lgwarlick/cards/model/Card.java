@@ -6,6 +6,14 @@ public class Card extends BaseEntity {
     private String name;
     private CardReleaseSet set;
 
+    public Card() {
+    }
+
+    public Card(String name, CardReleaseSet set) {
+        this.name = name;
+        this.set = set;
+    }
+
     /**
      * Getters
      * Setters

@@ -4,10 +4,7 @@ import lgwarlick.cards.model.CardReleaseSet;
 
 import java.util.Set;
 
-public interface CardReleaseSetService {
+public interface CardReleaseSetService extends CrudService<CardReleaseSet, Long> {
 
-    CardReleaseSet findByID(Long id);
-
-    Set<CardReleaseSet> findAll();
 
 }
