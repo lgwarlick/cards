@@ -5,6 +5,25 @@
     <title>Card Set</title>
 </head>
 <body>
+<!--/*@thymesVar id="cardreleaseset" type="lgwarlick.cards.model.CardReleaseSet"*/-->
 <h1 th:text="'All the cards'">All Cards in This Set</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Set Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="cardreleaseset : ${cardreleaseset}">
+        <td th:text="${cardreleaseset.id}">1</td>
+        <td th:text="${cardreleaseset.name}">Netrunner</td>
+
+    </tr>
+    </tbody>
+</table>
+
+
 </body>
 </html>
