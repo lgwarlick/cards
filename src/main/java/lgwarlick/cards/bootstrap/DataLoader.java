@@ -11,8 +11,8 @@ public class DataLoader implements CommandLineRunner {
 
 private final CardReleaseSetService cardReleaseSetService;
 
-    public DataLoader() {
-        cardReleaseSetService = new CardReleaseSetServiceMap();
+    public DataLoader(CardReleaseSetService cardReleaseSetService) {
+        this.cardReleaseSetService = cardReleaseSetService;
     }
 
     @Override

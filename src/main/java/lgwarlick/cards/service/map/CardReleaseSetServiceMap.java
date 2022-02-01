@@ -2,10 +2,11 @@ package lgwarlick.cards.service.map;
 
 import lgwarlick.cards.model.CardReleaseSet;
 import lgwarlick.cards.service.CardReleaseSetService;
-import lgwarlick.cards.service.CrudService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class CardReleaseSetServiceMap extends AbstractMapService<CardReleaseSet, Long> implements CardReleaseSetService {
 
 
