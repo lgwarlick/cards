@@ -21,17 +21,20 @@ private final CardReleaseSetService cardReleaseSetService;
         CardReleaseSet release1 = new CardReleaseSet();
         release1.setId(1L);
         release1.setName("What Lies Head");
+        release1.setReleaseDate("December 2012");
         cardReleaseSetService.save(release1);
 
 
         CardReleaseSet release2 = new CardReleaseSet();
         release2.setId(2L);
         release2.setName("Trace Amounts");
+        release2.setReleaseDate("January 2013");
         cardReleaseSetService.save(release2);
 
         CardReleaseSet release3 = new CardReleaseSet();
         release3.setId(3L);
         release3.setName("Cyber Exodus");
+        release3.setReleaseDate("February 2013");
         cardReleaseSetService.save(release3);
     }
 }
