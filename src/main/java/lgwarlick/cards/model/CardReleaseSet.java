@@ -6,14 +6,16 @@ public class CardReleaseSet extends BaseEntity {
 
 
     private String name;
+    private String releaseDate;
     private Set<Card> cardsInRelease;
 
 
     public CardReleaseSet() {
     }
 
-    public CardReleaseSet(String name, Set<Card> cardsInRelease) {
+    public CardReleaseSet(String name, Set<Card> cardsInRelease, String releaseDate) {
         this.name = name;
+        this.releaseDate = releaseDate;
         this.cardsInRelease = cardsInRelease;
     }
 
@@ -31,5 +33,13 @@ public class CardReleaseSet extends BaseEntity {
 
     public void setCardsInRelease(Set<Card> cardsInRelease) {
         this.cardsInRelease = cardsInRelease;
+    }
+
+    public String getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(String releaseDate) {
+        this.releaseDate = releaseDate;
     }
 }
