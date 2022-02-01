@@ -5,9 +5,11 @@ import lgwarlick.cards.model.Card;
 import lgwarlick.cards.model.CardType;
 import lgwarlick.cards.service.CardService;
 import lgwarlick.cards.service.CrudService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class CardServiceMap extends AbstractMapService<Card, Long> implements CardService {
 
     @Override
