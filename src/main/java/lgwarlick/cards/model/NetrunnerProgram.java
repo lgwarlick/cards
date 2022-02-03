@@ -6,6 +6,9 @@ public class NetrunnerProgram extends Card {
     private Integer memoryCost;
     private Integer strength;
 
+    public NetrunnerProgram() {
+    }
+
     public NetrunnerProgram(Integer installCost, Integer memoryCost, Integer strength) {
         this.installCost = installCost;
         this.memoryCost = memoryCost;

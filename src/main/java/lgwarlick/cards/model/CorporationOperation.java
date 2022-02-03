@@ -4,6 +4,9 @@ public class CorporationOperation extends Card{
 
     private Integer playCost;
 
+    public CorporationOperation() {
+    }
+
     public CorporationOperation(Integer playCost) {
         this.playCost = playCost;
     }

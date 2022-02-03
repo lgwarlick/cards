@@ -6,6 +6,9 @@ public class NetrunnerIdentity extends Card {
     private Integer minimumDeckSize;
     private Integer influenceLimit;
 
+    public NetrunnerIdentity() {
+    }
+
     public NetrunnerIdentity(Integer baseLink, Integer minimumDeckSize, Integer influenceLimit) {
         this.baseLink = baseLink;
         this.minimumDeckSize = minimumDeckSize;
