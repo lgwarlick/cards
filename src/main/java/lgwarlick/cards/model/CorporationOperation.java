@@ -1,14 +1,14 @@
 package lgwarlick.cards.model;
 
-public class NetrunnerEvent extends Card {
+public class CorporationOperation extends Card{
 
-    Integer playCost;
+    private Integer playCost;
 
-    public NetrunnerEvent(Integer playCost) {
+    public CorporationOperation(Integer playCost) {
         this.playCost = playCost;
     }
 
-    public NetrunnerEvent(String name, String faction, Integer influenceCost, CardReleaseSet set, String cardText, String flavorText, Integer playCost) {
+    public CorporationOperation(String name, String faction, Integer influenceCost, CardReleaseSet set, String cardText, String flavorText, Integer playCost) {
         super(name, faction, influenceCost, set, cardText, flavorText);
         this.playCost = playCost;
     }
