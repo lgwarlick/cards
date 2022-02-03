@@ -5,6 +5,9 @@ public class CorporationIce extends Card {
     private Integer rezCost;
     private Integer strength;
 
+    public CorporationIce() {
+    }
+
     public CorporationIce(Integer rezCost, Integer strength) {
         this.rezCost = rezCost;
         this.strength = strength;

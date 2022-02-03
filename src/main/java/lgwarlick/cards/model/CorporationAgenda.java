@@ -5,6 +5,9 @@ public class CorporationAgenda extends Card{
     private Integer advancementRequirement;
     private Integer agendaPoints;
 
+    public CorporationAgenda() {
+    }
+
     public CorporationAgenda(Integer advancementRequirement, Integer agendaPoints) {
         this.advancementRequirement = advancementRequirement;
         this.agendaPoints = agendaPoints;

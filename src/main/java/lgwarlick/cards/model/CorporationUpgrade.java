@@ -5,6 +5,9 @@ public class CorporationUpgrade extends Card {
     private Integer rezCost;
     private Integer trashCost;
 
+    public CorporationUpgrade() {
+    }
+
     public CorporationUpgrade(Integer rezCost, Integer trashCost) {
         this.rezCost = rezCost;
         this.trashCost = trashCost;

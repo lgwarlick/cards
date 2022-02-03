@@ -5,6 +5,9 @@ public class CorporationIdentity extends Card {
     private Integer minimumDeckSize;
     private Integer influenceLimit;
 
+    public CorporationIdentity() {
+    }
+
     public CorporationIdentity(Integer minimumDeckSize, Integer influenceLimit) {
         this.minimumDeckSize = minimumDeckSize;
         this.influenceLimit = influenceLimit;

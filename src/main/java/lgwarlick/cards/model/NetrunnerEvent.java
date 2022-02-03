@@ -4,6 +4,9 @@ public class NetrunnerEvent extends Card {
 
     Integer playCost;
 
+    public NetrunnerEvent() {
+    }
+
     public NetrunnerEvent(Integer playCost) {
         this.playCost = playCost;
     }

@@ -4,6 +4,9 @@ public class NetrunnerHardware extends Card {
 
     private Integer installCost;
 
+    public NetrunnerHardware() {
+    }
+
     public NetrunnerHardware(Integer installCost) {
         this.installCost = installCost;
     }
