@@ -2,10 +2,8 @@ package lgwarlick.cards.bootstrap;
 
 import lgwarlick.cards.model.Card;
 import lgwarlick.cards.model.CardReleaseSet;
-import lgwarlick.cards.model.NetrunnerResource;
 import lgwarlick.cards.service.CardReleaseSetService;
 import lgwarlick.cards.service.CardService;
-import lgwarlick.cards.service.map.CardReleaseSetServiceMap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -47,7 +45,7 @@ private final CardService cardService;
         card1.setCardText("Blank card text");
         cardService.save(card1);
 
-        NetrunnerResource card2 = new NetrunnerResource();
+        Card card2 = new Card();
         card2.setId(2L);
         card2.setName("Armitage Codebusting");
         card2.setCardText("Place 12 from the bank on Armitage Codebusting");
