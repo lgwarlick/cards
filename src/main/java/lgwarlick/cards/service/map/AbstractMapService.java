@@ -1,13 +1,12 @@
 package lgwarlick.cards.service.map;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import lgwarlick.cards.model.BaseEntity;
 
-public abstract class AbstractMapService<T, ID> {
+import java.util.*;
 
-    protected Map<ID, T> map = new HashMap<>();
+public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> {
+
+    protected Map<Long, T> map = new HashMap<>();
 
     /**
      * Find all objects of type T
@@ -20,7 +19,7 @@ public abstract class AbstractMapService<T, ID> {
     /**
      *
      * @param id
-     * @return the an object of type T from the map based off the id provided
+     * @return an object of type T from the map based off the id provided
      */
     T findById(ID id) {
         return map.get(id);
@@ -28,17 +27,39 @@ public abstract class AbstractMapService<T, ID> {
 
     /*No plans for implementation at this time*/
 
-    T save(ID id, T object){
-        map.put(id, object);
+    T save(T object){
+        if(object != null){
+           if (object.getId() == null){
+               object.setId(getNextId());
+           }
+           map.put(object.getId(), object);
+        } else {
+            throw new RuntimeException("Object cannot be null");
+        }
         return object;
     }
 
     void delete(T object){
-        map.entrySet().removeIf(entry ->entry.getValue().equals(object));
+        map.entrySet().removeIf(entry -> entry.getValue().equals(object));
     }
 
     void deleteByID(ID id){
         map.remove(id);
+    }
+
+    /**
+     * Auto increments map ID generation
+     * @return
+     */
+    private Long getNextId(){
+
+        Long nextId = null;
+       try {
+           nextId = Collections.max(map.keySet()) +1;
+       } catch (NoSuchElementException e) {
+           nextId = 1L;
+       }
+        return nextId;
     }
 
 }
