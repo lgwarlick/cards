@@ -32,6 +32,6 @@ public class CardReleaseSetServiceMap extends AbstractMapService<CardReleaseSet,
 
     @Override
     public CardReleaseSet save(CardReleaseSet cardReleaseSet) {
-        return super.save(cardReleaseSet.getId(), cardReleaseSet);
+        return super.save(cardReleaseSet);
     }
 }

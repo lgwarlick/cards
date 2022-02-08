@@ -24,7 +24,7 @@ public class CardServiceMap extends AbstractMapService<Card, Long> implements Ca
 
     @Override
     public Card save(Card object) {
-        return super.save(object.getId(),object);
+        return super.save(object);
     }
 
     @Override
