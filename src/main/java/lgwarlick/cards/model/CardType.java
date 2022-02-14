@@ -1,7 +1,8 @@
 package lgwarlick.cards.model;
 
-public class CardType extends BaseEntity{
+public enum CardType {
 
-    private String cardType;
+    CORPORATION_IDENTITY, OPERATION, AGENDA, ICE, UPGRADE, ASSET,
+    RUNNER_IDENTITY, HARDWARE, RESOURCES, PROGRAMS, EVENTS;
 
 }

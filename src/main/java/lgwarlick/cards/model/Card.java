@@ -4,7 +4,8 @@ public class Card extends BaseEntity {
 
 
     private String name;
-    private String faction;
+    private Faction faction;
+    private CardType cardType;
     private Integer influenceCost;
     private CardReleaseSet set;
     private String cardText;
@@ -39,9 +40,10 @@ public class Card extends BaseEntity {
     public Card() {
     }
 
-    public Card(String name, String faction, Integer influenceCost, CardReleaseSet set, String cardText, String flavorText, Integer advancementRequirement, Integer agendaPoints, Integer rezCost, Integer trashCost, Integer installCost, Integer baseLink, Integer memoryCost, Integer minimumDeckSize, Integer influenceLimit, Integer strength, Integer playCost) {
+    public Card(String name, Faction faction, CardType cardType, Integer influenceCost, CardReleaseSet set, String cardText, String flavorText, Integer advancementRequirement, Integer agendaPoints, Integer rezCost, Integer trashCost, Integer installCost, Integer baseLink, Integer memoryCost, Integer minimumDeckSize, Integer influenceLimit, Integer strength, Integer playCost) {
         this.name = name;
         this.faction = faction;
+        this.cardType = cardType;
         this.influenceCost = influenceCost;
         this.set = set;
         this.cardText = cardText;
@@ -73,12 +75,20 @@ public class Card extends BaseEntity {
         this.name = name;
     }
 
-    public String getFaction() {
+    public Faction getFaction() {
         return faction;
     }
 
-    public void setFaction(String faction) {
+    public void setFaction(Faction faction) {
         this.faction = faction;
+    }
+
+    public CardType getCardType() {
+        return cardType;
+    }
+
+    public void setCardType(CardType cardType) {
+        this.cardType = cardType;
     }
 
     public Integer getInfluenceCost() {
