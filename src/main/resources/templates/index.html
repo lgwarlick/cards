@@ -15,6 +15,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!--/*@thymesVar id="cardreleaseset" type="lgwarlick.cards.model.CardReleaseSet"*/-->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" href="#" th:href="@{'/card'}">Card</a>
@@ -24,9 +25,9 @@
                             Sets
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#" th:href="@{'/set'}">Set 1</a></li>
-                            <li><a class="dropdown-item" href="#" th:href="@{'/set'}">Set 2</a></li>
-                            <li><a class="dropdown-item" href="#" th:href="@{'/set'}">Set 3</a></li>
+                            <li th:each="cardreleaseset : ${cardreleaseset}"
+                                th:value="cardreleaseset"
+                                th:text="${cardreleaseset.name}"><a class="dropdown-item" href="#">Set 1</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
