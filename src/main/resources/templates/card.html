@@ -13,15 +13,19 @@
         <thead>
         <tr>
             <th>Id</th>
-            <th>Card Name</th>
+            <th>Name</th>
+            <th>Faction</th>
+            <th>Type</th>
             <th>Card Text</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="card : ${card}">
             <td th:text="${card.id}">1</td>
-            <td th:text="${card.name}">Blank Card</td>
-            <td th:text="${card.cardText}">Blank Text</td>
+            <td th:text="${card.name}">Name</td>
+            <td th:text="${card.faction}">Faction</td>
+            <td th:text="${card.cardType}">Type</td>
+            <td th:text="${card.cardText}">Card Text</td>
         </tr>
         </tbody>
     </table>
