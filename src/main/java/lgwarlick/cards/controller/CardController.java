@@ -27,17 +27,6 @@ public class CardController {
         return "card/allcards.html";
     }
 
-    /*
-    @RequestMapping({"/agenda", "/card/agenda"})
-    public String listAgendas(Model model){
-
-        model.addAttribute("card", cardService.findAllByType(CardType.AGENDA));
-
-        return "card/agenda.html";
-    }
-    */
-
-
     @RequestMapping({"/card/{cardType}", "/{cardType}"})
     public String listResources(@PathVariable String cardType, Model model){
         model.addAttribute("card", cardService.findAllByType(CardType.valueOf(cardType.toUpperCase())));
