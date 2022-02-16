@@ -7,6 +7,7 @@ import lgwarlick.cards.service.CardService;
 import lgwarlick.cards.service.CrudService;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Service
@@ -44,6 +45,15 @@ public class CardServiceMap extends AbstractMapService<Card, Long> implements Ca
      */
     @Override
     public Set<Card> findAllByType(CardType cardType) {
-        return null;
+
+        Set<Card> allCardsOfType = new HashSet<>();
+
+        map.forEach((aLong, card) -> {
+            if(card.getCardType() == cardType){
+                allCardsOfType.add(card);
+            }
+        });
+
+        return allCardsOfType;
     }
 }

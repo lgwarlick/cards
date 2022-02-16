@@ -1,5 +1,6 @@
 package lgwarlick.cards.controller;
 
+import lgwarlick.cards.model.CardType;
 import lgwarlick.cards.service.CardService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +21,14 @@ public class CardController {
         model.addAttribute("card", cardService.findAll());
 
         return "card.html";
+    }
+
+    @RequestMapping("/agenda")
+    public String listAgendas(Model model){
+
+        model.addAttribute("card", cardService.findAllByType(CardType.AGENDA));
+
+        return "agenda.html";
     }
 
 }
