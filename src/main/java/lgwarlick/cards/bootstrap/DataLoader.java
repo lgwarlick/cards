@@ -40,7 +40,7 @@ private final CardService cardService;
 
         Card card1 = new Card();
         card1.setName("Acme Consulting");
-        card1.setCardType(CardType.CORPORATION_IDENTITY);
+        card1.setCardType(CardType.CORPORATIONIDENTITY);
         card1.setFaction(Faction.NBN);
         card1.setCardText("The Runner is considered to have 1 additional tag (even if they have 0) during encounters with the outermost piece of ice protecting any server.");
         cardService.save(card1);

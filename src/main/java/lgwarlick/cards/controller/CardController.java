@@ -4,7 +4,11 @@ import lgwarlick.cards.model.CardType;
 import lgwarlick.cards.service.CardService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.Locale;
 
 @Controller
 public class CardController {
@@ -20,15 +24,14 @@ public class CardController {
 
         model.addAttribute("card", cardService.findAll());
 
-        return "card.html";
+        return "card/allcards.html";
     }
 
-    @RequestMapping("/agenda")
-    public String listAgendas(Model model){
+    @RequestMapping({"/card/{cardType}", "/{cardType}"})
+    public String listResources(@PathVariable String cardType, Model model){
+        model.addAttribute("card", cardService.findAllByType(CardType.valueOf(cardType.toUpperCase())));
 
-        model.addAttribute("card", cardService.findAllByType(CardType.AGENDA));
-
-        return "agenda.html";
+        return "card/" + cardType;
     }
 
 }

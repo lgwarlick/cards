@@ -2,7 +2,7 @@ package lgwarlick.cards.model;
 
 public enum CardType {
 
-    CORPORATION_IDENTITY("Corporation Identity"),
+    CORPORATIONIDENTITY("Corporation Identity"),
     OPERATION("Operation"),
     AGENDA("Agenda"),
     ICE("Ice"),
@@ -10,11 +10,11 @@ public enum CardType {
     ASSET("Asset"),
 
 
-    RUNNER_IDENTITY("Runner Identity"),
+    RUNNERIDENTITY("Runner Identity"),
     HARDWARE(""),
     RESOURCE("Resource"),
     PROGRAM("Program"),
-    EVENTS("Events");
+    EVENT("Event");
 
     private String name;
 
