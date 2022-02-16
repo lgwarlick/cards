@@ -52,5 +52,21 @@ private final CardService cardService;
         card2.setCardText("Place 12 from the bank on Armitage Codebusting");
         card2.setInstallCost(1);
         cardService.save(card2);
+
+        Card card3 = new Card();
+        card3.setName("Bellona");
+        card3.setCardType(CardType.AGENDA);
+        card3.setFaction(Faction.NBN);
+        card3.setCardText("As an additional cost to steal this agenda, the Runner must pay 5credit. When you score this agenda, gain 5credit.");
+        card3.setAdvancementRequirement(10);
+        cardService.save(card3);
+
+        Card card4 = new Card();
+        card4.setName("Degree Mill");
+        card4.setCardType(CardType.AGENDA);
+        card4.setFaction(Faction.NBN);
+        card4.setCardText("As an additional cost to steal Degree Mill, the Runner must shuffle 2 installed Runner cards into the stack.");
+        card4.setAdvancementRequirement(5);
+        cardService.save(card4);
     }
 }
