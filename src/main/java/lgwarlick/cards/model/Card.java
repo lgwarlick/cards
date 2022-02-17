@@ -1,19 +1,26 @@
 package lgwarlick.cards.model;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import javax.persistence.*;
 
+@Entity
 public class Card extends BaseEntity {
 
-
     private String name;
-    private Faction faction;
-    private CardType cardType;
     private Integer influenceCost;
-    private CardReleaseSet set;
     private String cardText;
     private String flavorText;
+
+    @OneToOne //a card can have one release set
+    private CardReleaseSet set;
+
+    @Enumerated(value = EnumType.STRING)
+    private CardType cardType;
+
+    @Enumerated(value = EnumType.STRING)
+    private Faction faction;
+
+    @Lob
+    private Byte[] image;
 
     /**
      * Corporation Card Attributes
@@ -40,8 +47,6 @@ public class Card extends BaseEntity {
     private Integer influenceLimit;
     private Integer strength;
     private Integer playCost;
-
-    private Byte[] image;
 
     public Card() {
     }
