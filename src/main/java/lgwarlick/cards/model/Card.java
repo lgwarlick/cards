@@ -1,5 +1,9 @@
 package lgwarlick.cards.model;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 public class Card extends BaseEntity {
 
 
@@ -37,10 +41,12 @@ public class Card extends BaseEntity {
     private Integer strength;
     private Integer playCost;
 
+    private Byte[] image;
+
     public Card() {
     }
 
-    public Card(String name, Faction faction, CardType cardType, Integer influenceCost, CardReleaseSet set, String cardText, String flavorText, Integer advancementRequirement, Integer agendaPoints, Integer rezCost, Integer trashCost, Integer installCost, Integer baseLink, Integer memoryCost, Integer minimumDeckSize, Integer influenceLimit, Integer strength, Integer playCost) {
+    public Card(String name, Faction faction, CardType cardType, Integer influenceCost, CardReleaseSet set, String cardText, String flavorText, Integer advancementRequirement, Integer agendaPoints, Integer rezCost, Integer trashCost, Integer installCost, Integer baseLink, Integer memoryCost, Integer minimumDeckSize, Integer influenceLimit, Integer strength, Integer playCost, Byte[] image) {
         this.name = name;
         this.faction = faction;
         this.cardType = cardType;
@@ -59,6 +65,7 @@ public class Card extends BaseEntity {
         this.influenceLimit = influenceLimit;
         this.strength = strength;
         this.playCost = playCost;
+        this.image = image;
     }
 
     /**
@@ -209,5 +216,13 @@ public class Card extends BaseEntity {
 
     public void setPlayCost(Integer playCost) {
         this.playCost = playCost;
+    }
+
+    public Byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(Byte[] image) {
+        this.image = image;
     }
 }
