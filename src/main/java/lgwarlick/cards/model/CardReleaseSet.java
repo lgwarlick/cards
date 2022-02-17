@@ -1,14 +1,19 @@
 package lgwarlick.cards.model;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+
+import javax.persistence.OneToMany;
 import java.util.Set;
 
+@Entity
 public class CardReleaseSet extends BaseEntity {
-
 
     private String name;
     private String releaseDate;
-    private Set<Card> cardsInRelease;
 
+    @OneToMany(cascade = CascadeType.ALL) //one release can have many cards
+    private Set<Card> cardsInRelease;
 
     public CardReleaseSet() {
     }
