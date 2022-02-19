@@ -6,27 +6,58 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-<!--/*@thymesVar id="card" type="lgwarlick.cards.model.Card"*/-->
-<h1>Programs</h1>
 
-<table>
-  <thead>
-  <tr>
-    <th>Id</th>
-    <th>Name</th>
-    <th>Faction</th>
-    <th>Card Text</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr th:each="card : ${card}">
-    <td th:text="${card.id}">1</td>
-    <td th:text="${card.name}">Name</td>
-    <td th:text="${card.faction}">Faction</td>
-    <td th:text="${card.cardText}">Card Text</td>
-  </tr>
-  </tbody>
-</table>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img class="img-responsive" th:src="@{/resources/images/android-netrunner-logo.png}" width="300"/></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!--/*@thymesVar id="cardreleaseset" type="lgwarlick.cards.model.CardReleaseSet"*/-->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#" th:href="@{'/card'}">Card</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/templates/cardreleaseset.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Sets
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li th:each="cardreleaseset : ${cardreleaseset}"
+                  th:value="cardreleaseset"
+                  th:text="${cardreleaseset.name}"><a class="dropdown-item" href="#">Set 1</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Link</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--/*@thymesVar id="card" type="lgwarlick.cards.model.Card"*/-->
+  <h1>Programs</h1>
+
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Faction</th>
+      <th>Card Text</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="card : ${card}">
+      <td><img class="img-fluid" th:src="@{/resources/images/22042.jpg}" width="100"/></td>
+      <td th:text="${card.name}">Name</td>
+      <td th:text="${card.faction}">Faction</td>
+      <td th:text="${card.cardText}">Card Text</td>
+    </tr>
+    </tbody>
+  </table>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
