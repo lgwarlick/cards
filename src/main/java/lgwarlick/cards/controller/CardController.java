@@ -29,7 +29,7 @@ public class CardController {
 
     @RequestMapping({"/card/{cardType}", "/{cardType}"})
     public String listResources(@PathVariable String cardType, Model model){
-        model.addAttribute("card", cardService.findAllByType(CardType.valueOf(cardType.toUpperCase())));
+        model.addAttribute("card", cardService.findAllByType(CardType.valueOf(cardType.toUpperCase(Locale.ROOT))));
 
         return "card/" + cardType;
     }
