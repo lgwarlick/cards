@@ -11,7 +11,7 @@ public enum CardType {
 
 
     RUNNERIDENTITY("Runner Identity"),
-    HARDWARE(""),
+    HARDWARE("Hardware"),
     RESOURCE("Resource"),
     PROGRAM("Program"),
     EVENT("Event");
