@@ -19,7 +19,7 @@ public class CardReleaseSetController {
 
         model.addAttribute("cardreleaseset", cardReleaseSetService.findAll());
 
-        return "cardreleaseset.html";
+        return "cardreleaseset";
     }
 
 }
