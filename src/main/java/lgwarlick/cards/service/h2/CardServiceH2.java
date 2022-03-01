@@ -22,7 +22,16 @@ public class CardServiceH2 implements CardService {
 
     @Override
     public Set<Card> findAllByType(CardType cardType) {
-        return null;
+
+        Set<Card> allCardsOfType = new HashSet<>();
+
+        cardRepository.findAll().forEach(card -> {
+            if (card.getCardType() == cardType){
+                allCardsOfType.add(card);
+            }
+        });
+
+        return allCardsOfType;
     }
 
     @Override

@@ -1,9 +1,9 @@
 package lgwarlick.cards.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,16 +13,16 @@ public class CardReleaseSet extends BaseEntity {
     private String name;
     private String releaseDate;
 
-    @OneToMany(cascade = CascadeType.ALL) //one release can have many cards
-    private Set<Card> cardsInRelease = new HashSet<>();
+    @OneToMany
+    private Set<Card> releaseSet = new HashSet<>();
 
     public CardReleaseSet() {
     }
 
-    public CardReleaseSet(String name, Set<Card> cardsInRelease, String releaseDate) {
+    public CardReleaseSet(String name, Set<Card> releaseSet, String releaseDate) {
         this.name = name;
         this.releaseDate = releaseDate;
-        this.cardsInRelease = cardsInRelease;
+        this.releaseSet = releaseSet;
     }
 
     public String getName() {
@@ -33,12 +33,12 @@ public class CardReleaseSet extends BaseEntity {
         this.name = name;
     }
 
-    public Set<Card> getCardsInRelease() {
-        return cardsInRelease;
+    public Set<Card> getReleaseSet() {
+        return releaseSet;
     }
 
-    public void setCardsInRelease(Set<Card> cardsInRelease) {
-        this.cardsInRelease = cardsInRelease;
+    public void setReleaseSet(Set<Card> cardsInRelease) {
+        this.releaseSet = cardsInRelease;
     }
 
     public String getReleaseDate() {
