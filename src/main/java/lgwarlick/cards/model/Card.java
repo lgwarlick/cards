@@ -10,8 +10,8 @@ public class Card extends BaseEntity {
     private String cardText;
     private String flavorText;
 
-    @OneToOne //a card can have one release set
-    private CardReleaseSet set;
+    @ManyToOne
+    private CardReleaseSet releaseSet;
 
     @Enumerated(value = EnumType.STRING)
     private CardType cardType;
@@ -51,12 +51,12 @@ public class Card extends BaseEntity {
     public Card() {
     }
 
-    public Card(String name, Faction faction, CardType cardType, Integer influenceCost, CardReleaseSet set, String cardText, String flavorText, Integer advancementRequirement, Integer agendaPoints, Integer rezCost, Integer trashCost, Integer installCost, Integer baseLink, Integer memoryCost, Integer minimumDeckSize, Integer influenceLimit, Integer strength, Integer playCost, Byte[] image) {
+    public Card(String name, Faction faction, CardType cardType, Integer influenceCost, CardReleaseSet releaseSet, String cardText, String flavorText, Integer advancementRequirement, Integer agendaPoints, Integer rezCost, Integer trashCost, Integer installCost, Integer baseLink, Integer memoryCost, Integer minimumDeckSize, Integer influenceLimit, Integer strength, Integer playCost, Byte[] image) {
         this.name = name;
         this.faction = faction;
         this.cardType = cardType;
         this.influenceCost = influenceCost;
-        this.set = set;
+        this.releaseSet = releaseSet;
         this.cardText = cardText;
         this.flavorText = flavorText;
         this.advancementRequirement = advancementRequirement;
@@ -111,12 +111,12 @@ public class Card extends BaseEntity {
         this.influenceCost = influenceCost;
     }
 
-    public CardReleaseSet getSet() {
-        return set;
+    public CardReleaseSet getReleaseSet() {
+        return releaseSet;
     }
 
-    public void setSet(CardReleaseSet set) {
-        this.set = set;
+    public void setReleaseSet(CardReleaseSet set) {
+        this.releaseSet = set;
     }
 
     public String getCardText() {
