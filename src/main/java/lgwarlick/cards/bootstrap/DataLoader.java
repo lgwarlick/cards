@@ -27,11 +27,50 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
 
-        populateCards();
 
         /**
          * CARDS
          */
+
+        Card card1 = new Card();
+        card1.setName("Breaking News");
+        card1.setFaction(Faction.NBN);
+        card1.setCardType(CardType.AGENDA);
+        card1.setAdvancementRequirement(2);
+        card1.setAgendaPoints(1);
+        card1.setCardText("When you score Breaking News, give the Runner 2 tags.\n" +
+                "\n" +
+                "When the turn on which you scored Breaking News ends, the Runner loses 2 tags.");
+
+        cardRepository.save(card1);
+
+        Card card2 = new Card();
+        card2.setName("Hedge Fund");
+        card2.setCardType(CardType.OPERATION);
+        card2.setFaction(Faction.NEUTRAL);
+        card2.setPlayCost(5);
+        card2.setCardText("Gain 9 credit.");
+
+        cardRepository.save(card2);
+
+        Card card3 = new Card();
+        card3.setName("Government Contracts");
+        card3.setFaction(Faction.WEYLAND_CONSORTIUM);
+        card3.setCardType(CardType.AGENDA);
+        card3.setAgendaPoints(3);
+        card3.setAdvancementRequirement(5);
+        card3.setCardText("Spend 2: Gain 4");
+
+        cardRepository.save(card3);
+
+        Card card4 = new Card();
+        card4.setName("Diesel");
+        card4.setCardType(CardType.EVENT);
+        card4.setFaction(Faction.SHAPER);
+        card4.setPlayCost(0);
+        card4.setCardText("Draw 3 cards");
+
+        cardRepository.save(card4);
 
         Card card5 = new Card();
         card5.setName("Gordian Blade");
@@ -110,45 +149,4 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
 
     }
 
-    private void populateCards(){
-        Card card1 = new Card();
-        card1.setName("Breaking News");
-        card1.setFaction(Faction.NBN);
-        card1.setCardType(CardType.AGENDA);
-        card1.setAdvancementRequirement(2);
-        card1.setAgendaPoints(1);
-        card1.setCardText("When you score Breaking News, give the Runner 2 tags.\n" +
-                "\n" +
-                "When the turn on which you scored Breaking News ends, the Runner loses 2 tags.");
-
-        cardRepository.save(card1);
-
-        Card card2 = new Card();
-        card2.setName("Hedge Fund");
-        card2.setCardType(CardType.OPERATION);
-        card2.setFaction(Faction.NEUTRAL);
-        card2.setPlayCost(5);
-        card2.setCardText("Gain 9 credit.");
-
-        cardRepository.save(card2);
-
-        Card card3 = new Card();
-        card3.setName("Government Contracts");
-        card3.setFaction(Faction.WEYLAND_CONSORTIUM);
-        card3.setCardType(CardType.AGENDA);
-        card3.setAgendaPoints(3);
-        card3.setAdvancementRequirement(5);
-        card3.setCardText("Spend 2: Gain 4");
-
-        cardRepository.save(card3);
-
-        Card card4 = new Card();
-        card4.setName("Diesel");
-        card4.setCardType(CardType.EVENT);
-        card4.setFaction(Faction.SHAPER);
-        card4.setPlayCost(0);
-        card4.setCardText("Draw 3 cards");
-
-        cardRepository.save(card4);
-    }
 }
