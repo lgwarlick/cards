@@ -7,35 +7,35 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img class="img-responsive" th:src="@{/resources/images/android-netrunner-logo.png}" width="300"/></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!--/*@thymesVar id="cardreleaseset" type="lgwarlick.cards.model.CardReleaseSet"*/-->
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="#" th:href="@{'/card'}">Card</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="/templates/cardreleaseset.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Sets
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li th:each="cardreleaseset : ${cardreleaseset}"
-                  th:value="cardreleaseset"
-                  th:text="${cardreleaseset.name}"><a class="dropdown-item" href="#">Set 1</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Link</a>
-          </li>
-        </ul>
-      </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img class="img-responsive" th:src="@{/resources/images/android-netrunner-logo.png}"/></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!--/*@thymesVar id="datapack" type="lgwarlick.cards.model.DataPack"*/-->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#" th:href="@{'/card'}">Card</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/templates/datapack.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Sets
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li th:each="datapack : ${datapack}"
+                th:value="datapack"
+                th:text="${datapack.name}"><a class="dropdown-item" href="#">Set 1</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Link</a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
   <!--/*@thymesVar id="card" type="lgwarlick.cards.model.Card"*/-->
   <h1>Programs</h1>

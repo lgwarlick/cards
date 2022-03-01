@@ -1,27 +1,24 @@
 package lgwarlick.cards.bootstrap;
 
 import lgwarlick.cards.model.Card;
-import lgwarlick.cards.model.CardReleaseSet;
+import lgwarlick.cards.model.DataPack;
 import lgwarlick.cards.model.CardType;
 import lgwarlick.cards.model.Faction;
-import lgwarlick.cards.repository.CardReleaseSetRepository;
+import lgwarlick.cards.repository.DataPackRepository;
 import lgwarlick.cards.repository.CardRepository;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
-import java.util.HashSet;
-import java.util.Set;
-
 @Component
 public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
 
     private final CardRepository cardRepository;
-    private final CardReleaseSetRepository cardReleaseSetRepository;
+    private final DataPackRepository dataPackRepository;
 
-    public DataLoader(CardRepository cardRepository, CardReleaseSetRepository cardReleaseSetRepository) {
+    public DataLoader(CardRepository cardRepository, DataPackRepository dataPackRepository) {
         this.cardRepository = cardRepository;
-        this.cardReleaseSetRepository = cardReleaseSetRepository;
+        this.dataPackRepository = dataPackRepository;
     }
 
     @Override
@@ -134,18 +131,18 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
          * SETS
          */
 
-        CardReleaseSet set1 = new CardReleaseSet();
+        DataPack set1 = new DataPack();
         set1.setName("What Lies Ahead");
         set1.setReleaseDate("December 2012");
 
 
-        cardReleaseSetRepository.save(set1);
+        dataPackRepository.save(set1);
 
-        CardReleaseSet set2 = new CardReleaseSet();
+        DataPack set2 = new DataPack();
         set2.setName("Trace Amounts");
         set2.setReleaseDate("January 2013");
 
-        cardReleaseSetRepository.save(set2);
+        dataPackRepository.save(set2);
 
     }
 

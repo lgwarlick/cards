@@ -11,7 +11,8 @@ public class Card extends BaseEntity {
     private String flavorText;
 
     @ManyToOne
-    private CardReleaseSet releaseSet;
+    @JoinColumn(name = "datapack_id")
+    private DataPack dataPack;
 
     @Enumerated(value = EnumType.STRING)
     private CardType cardType;
@@ -51,12 +52,12 @@ public class Card extends BaseEntity {
     public Card() {
     }
 
-    public Card(String name, Faction faction, CardType cardType, Integer influenceCost, CardReleaseSet releaseSet, String cardText, String flavorText, Integer advancementRequirement, Integer agendaPoints, Integer rezCost, Integer trashCost, Integer installCost, Integer baseLink, Integer memoryCost, Integer minimumDeckSize, Integer influenceLimit, Integer strength, Integer playCost, Byte[] image) {
+    public Card(String name, Faction faction, CardType cardType, Integer influenceCost, DataPack dataPack, String cardText, String flavorText, Integer advancementRequirement, Integer agendaPoints, Integer rezCost, Integer trashCost, Integer installCost, Integer baseLink, Integer memoryCost, Integer minimumDeckSize, Integer influenceLimit, Integer strength, Integer playCost, Byte[] image) {
         this.name = name;
         this.faction = faction;
         this.cardType = cardType;
         this.influenceCost = influenceCost;
-        this.releaseSet = releaseSet;
+        this.dataPack = dataPack;
         this.cardText = cardText;
         this.flavorText = flavorText;
         this.advancementRequirement = advancementRequirement;
@@ -111,12 +112,12 @@ public class Card extends BaseEntity {
         this.influenceCost = influenceCost;
     }
 
-    public CardReleaseSet getReleaseSet() {
-        return releaseSet;
+    public DataPack getDataPack() {
+        return dataPack;
     }
 
-    public void setReleaseSet(CardReleaseSet set) {
-        this.releaseSet = set;
+    public void setDataPack(DataPack set) {
+        this.dataPack = set;
     }
 
     public String getCardText() {

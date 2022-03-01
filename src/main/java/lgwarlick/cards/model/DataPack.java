@@ -2,27 +2,26 @@ package lgwarlick.cards.model;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-public class CardReleaseSet extends BaseEntity {
+public class DataPack extends BaseEntity {
 
     private String name;
     private String releaseDate;
 
-    @OneToMany
-    private Set<Card> releaseSet = new HashSet<>();
+    @OneToMany(mappedBy = "dataPack")
+    private Set<Card> dataPack = new HashSet<>();
 
-    public CardReleaseSet() {
+    public DataPack() {
     }
 
-    public CardReleaseSet(String name, Set<Card> releaseSet, String releaseDate) {
+    public DataPack(String name, Set<Card> dataPack, String releaseDate) {
         this.name = name;
         this.releaseDate = releaseDate;
-        this.releaseSet = releaseSet;
+        this.dataPack = dataPack;
     }
 
     public String getName() {
@@ -33,12 +32,12 @@ public class CardReleaseSet extends BaseEntity {
         this.name = name;
     }
 
-    public Set<Card> getReleaseSet() {
-        return releaseSet;
+    public Set<Card> getDataPack() {
+        return dataPack;
     }
 
-    public void setReleaseSet(Set<Card> cardsInRelease) {
-        this.releaseSet = cardsInRelease;
+    public void setDataPack(Set<Card> cardsInRelease) {
+        this.dataPack = cardsInRelease;
     }
 
     public String getReleaseDate() {
