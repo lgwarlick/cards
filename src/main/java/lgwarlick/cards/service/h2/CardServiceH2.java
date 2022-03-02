@@ -2,6 +2,7 @@ package lgwarlick.cards.service.h2;
 
 import lgwarlick.cards.model.Card;
 import lgwarlick.cards.model.CardType;
+import lgwarlick.cards.model.Faction;
 import lgwarlick.cards.repository.CardRepository;
 import lgwarlick.cards.service.CardService;
 import org.springframework.context.annotation.Primary;
@@ -32,6 +33,20 @@ public class CardServiceH2 implements CardService {
         });
 
         return allCardsOfType;
+    }
+
+    @Override
+    public Set<Card> findAllByFaction(Faction faction) {
+
+        Set<Card> allCardsOfFaction = new HashSet<>();
+
+        cardRepository.findAll().forEach(card -> {
+            if (card.getFaction() == faction){
+                allCardsOfFaction.add(card);
+            }
+        });
+
+        return allCardsOfFaction;
     }
 
     @Override

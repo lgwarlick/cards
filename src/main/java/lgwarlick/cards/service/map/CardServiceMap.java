@@ -3,6 +3,7 @@ package lgwarlick.cards.service.map;
 import lgwarlick.cards.model.Card;
 
 import lgwarlick.cards.model.CardType;
+import lgwarlick.cards.model.Faction;
 import lgwarlick.cards.service.CardService;
 import lgwarlick.cards.service.CrudService;
 import org.springframework.stereotype.Service;
@@ -55,5 +56,19 @@ public class CardServiceMap extends AbstractMapService<Card, Long> implements Ca
         });
 
         return allCardsOfType;
+    }
+
+    @Override
+    public Set<Card> findAllByFaction(Faction faction) {
+
+        Set<Card> allCardsOfFaction = new HashSet<>();
+
+        map.forEach((aLong, card) -> {
+            if (card.getFaction() == faction){
+                allCardsOfFaction.add(card);
+            }
+        });
+
+        return allCardsOfFaction;
     }
 }
